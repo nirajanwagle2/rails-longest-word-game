@@ -1,18 +1,27 @@
 <div class="container">
-  <h1 class="text-center">Make a word out of the following letters!</h1>
+  <h1 class="text-center">Try and make a word out of the following letters!</h1>
   <div class="letters">
-
     <% @letters.each do |letter| %>
-      <button class="btn btn-primary"><%= letter %></button>
+      <button class="btn btn-primary letter"><%= letter %></button>
     <% end %>
   </div>
 
-  <form action="/games/score" method="post" data-turbo="false">
+  <form action="/games/score" method="post" data-turbo="false" class="new-game">
   <!-- ... -->
     <input type="text" name="text" placeholder="Type your word">
     <input type="submit" value="Check">
+    <button><%= link_to "Refresh", "/games/new"  %></button>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <br>
+    <br>
+    <h4>Play with your words here:</h4>
+      <br>
+      <textarea rows="4" cols="50">
+        Delete this text. You can play around with your words here!
+      </textarea>
   </form>
+
 
 
 </div>
