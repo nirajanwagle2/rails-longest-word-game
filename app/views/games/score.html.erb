@@ -1,8 +1,13 @@
-<% if @valid == false %>
-  <p><%= @word %> is not a valid English word!</p>
-<% else %>
-  <p>Congrats!<%= @word %> is indeed a valid English word</p>
-  <p>It means <%= @meaning %></p>
-<% end %>
+<div class="container">
+  <% if @valid == false %>
+    <p><%= @word.capitalize %> is not a valid English word!</p>
+  <% else %>
+    <h5>Congrats! <%= @word.capitalize %> is indeed a valid English word</h5>
+    <div class="meaning">
+      <h6>It means <%= @meaning %></h6>
+    </div>
+  <% end %>
 
-<p>Click <%= link_to "here", games_new_path %> to play again!</p>
+  <p>Click <%= link_to "here", games_new_path %> to play again!</p>
+
+</div>
