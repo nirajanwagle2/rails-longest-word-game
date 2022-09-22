@@ -1,2 +1,8 @@
-<h1>Games#score</h1>
-<p>Find me in app/views/games/score.html.erb</p>
+<% if @valid == false %>
+  <p><%= @word %> is not a valid English word!</p>
+<% else %>
+  <p>Congrats!<%= @word %> is indeed a valid English word</p>
+  <p>It means <%= @meaning %></p>
+<% end %>
+
+<p>Click <%= link_to "here", games_new_path %> to play again!</p>

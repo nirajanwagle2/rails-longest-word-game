@@ -1,2 +1,18 @@
-<h1>Games#new</h1>
-<p>Find me in app/views/games/new.html.erb</p>
+<div class="container">
+  <h1 class="text-center">Make a word out of the following letters!</h1>
+  <div class="letters">
+
+    <% @letters.each do |letter| %>
+      <button class="btn btn-primary"><%= letter %></button>
+    <% end %>
+  </div>
+
+  <form action="/games/score" method="post" data-turbo="false">
+  <!-- ... -->
+    <input type="text" name="text" placeholder="Type your word">
+    <input type="submit" value="Check">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  </form>
+
+
+</div>
